@@ -1,1 +1,1 @@
-faire flag is_wrong -> compte a la fin
+convert tout les inputs en lowercase

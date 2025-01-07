@@ -1,7 +1,8 @@
 from questions import *
 from answers import *
+from choices import *
 
-#nombre de questions à poser
+#nombre de questions à poser, max 10
 to_ask = 3
 
 def score(answers):
@@ -13,18 +14,32 @@ def score(answers):
 
 answers = []
 
+choices = [
+    Choice(["Londres", "Paris", "Berlin"], "b"),
+    Choice(["Jaune", "violet", "Bleu"], "a"),
+    Choice(["2", "5", "7"], "c"),
+    Choice(["Pluton", "Saturne", "La terre"], "c"),
+    Choice(["4", "3", "5"], "b"),
+    Choice(["Le chien", "Le Chat", "La taupe"], "b"),
+    Choice(["anglais", "Basque", "Francais"], "c"),
+    Choice(["4", "6", "8"], "a"),
+    Choice(["Porto", "Lisbonne", "Faro"], "b"),
+    Choice(["décembre", "janvier", "juillet"], "a")
+]
+
+
 # [question, [choix possibles], réponse]
 questions = [
-    Question("Quelle est la capitale de la france ?", ["Londres", "Paris", "Berlin"], "b"),
-    Question("Quelle est la couleur du soleil ?", ["Jaune", "violet", "Bleu"], "a"),
-    Question("Combien y a-t-il de jours dans une semaine ?", ["2", "5", "7"], "c"),
-    Question("Quelle planète est surnommée la planète bleue ?", ["Pluton", "Saturne", "La terre"], "c"),
-    Question("Combien de côtés a un triangle ?", ["4", "3", "5"], "b"),
-    Question("Quel est l'animal qui miaule ?", ["Le chien", "Le Chat", "La taupe"], "b"),
-    Question("Dans quelle langue dit-on bonjour en France ?", ["anglais", "Basque", "Francais"], "c"),
-    Question("Combien font 2 + 2 ?", ["4", "6", "8"], "a"),
-    Question("Quel est la capitale du Portugal ?", ["Porto", "Lisbonne", "Faro"], "b"),
-    Question("Quel est le mois de l'année qui contient Noël ?", ["décembre", "janvier", "juillet"], "a")
+    Question("Quelle est la capitale de la france ?", choices[0]),
+    Question("Quelle est la couleur du soleil ?", choices[1]),
+    Question("Combien y a-t-il de jours dans une semaine ?", choices[2]),
+    Question("Quelle planète est surnommée la planète bleue ?", choices[3]),
+    Question("Combien de côtés a un triangle ?", choices[4]),
+    Question("Quel est l'animal qui miaule ?", choices[5]),
+    Question("Dans quelle langue dit-on bonjour en France ?", choices[6]),
+    Question("Combien font 2 + 2 ?", choices[7]),
+    Question("Quel est la capitale du Portugal ?",choices[8]),
+    Question("Quel est le mois de l'année qui contient Noël ?", choices[9])
 ]
 
 random.shuffle(questions)

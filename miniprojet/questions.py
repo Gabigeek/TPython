@@ -1,13 +1,13 @@
-import random
-
+from choices import *
 
 class Question():
-  def __init__(self, content, answers: list, valid_ans):
+  def __init__(self, content, choices: Choice):
     self.content = content
-    self.a_choice = answers[0]
-    self.b_choice = answers[1]
-    self.c_choice = answers[2]
-    self.answer = valid_ans
+    #super().__init__(choices.possible_choices, choices.valid_choice)
+    self.a_choice = choices.possible_choices[0]
+    self.b_choice = choices.possible_choices[1]
+    self.c_choice = choices.possible_choices[2]
+    self.answer = choices.valid_choice
 
     
 
@@ -17,7 +17,14 @@ class Question():
     print("a) " + self.a_choice)
     print("b) " + self.b_choice)
     print("c) " + self.c_choice)
-    user_input = input("Votre réponse: ")
-    #validation de la saisie : boucler si pas bon
+    while True:
+      try:
+        user_input = input("Votre réponse: ")
+        user_input = user_input.lower()
+        if user_input not in ["a", "b", "c"]:
+                raise ValueError('saisie utilisateur invalide')
+      except ValueError:
+        print("Veuillez saisir une réponse correcte")
+      else:
+        break
     return user_input
-  

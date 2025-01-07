@@ -1,3 +1,6 @@
+from questions import *
+from choices import *
+
 class Answer:
     def __init__(self, question, user_answer):
         self.question = question
@@ -12,8 +15,10 @@ class Answer:
         
 
 
-def is_correct(question, user_answer):
+def is_correct(question: Question, user_answer):
     if user_answer == question.answer:
         return True
     else:
         return False
+    
+
