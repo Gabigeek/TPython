@@ -1,1 +1,0 @@
-convert tout les inputs en lowercase
