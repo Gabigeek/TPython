@@ -17,7 +17,7 @@ This is a simple quiz application written in Python. The application asks the us
 
 ```sh
 python main.py
-
+```
 ## Exécution des tests unitaires
 
 ### Comment lancer les tests
