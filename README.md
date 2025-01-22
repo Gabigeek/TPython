@@ -17,3 +17,12 @@ This is a simple quiz application written in Python. The application asks the us
 
 ```sh
 python main.py
+
+## Exécution des tests unitaires
+
+### Comment lancer les tests
+Exécutez la commande suivante pour vérifier le bon fonctionnement des calculs d'entropie et de classification des mots de passe :
+
+```bash
+python3 tests.py
+```
